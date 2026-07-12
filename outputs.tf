@@ -1,3 +1,7 @@
+output "virtual_machine_restore_points_id" {
+  description = "Map of id values across all virtual_machine_restore_points, keyed the same as var.virtual_machine_restore_points"
+  value       = { for k, v in azurerm_virtual_machine_restore_point.virtual_machine_restore_points : k => v.id }
+}
 output "virtual_machine_restore_points_crash_consistency_mode_enabled" {
   description = "Map of crash_consistency_mode_enabled values across all virtual_machine_restore_points, keyed the same as var.virtual_machine_restore_points"
   value       = { for k, v in azurerm_virtual_machine_restore_point.virtual_machine_restore_points : k => v.crash_consistency_mode_enabled }
