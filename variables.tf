@@ -12,7 +12,7 @@ EOT
   type = map(object({
     name                                        = string
     virtual_machine_restore_point_collection_id = string
-    crash_consistency_mode_enabled              = optional(bool) # Default: false
+    crash_consistency_mode_enabled              = optional(bool)
     excluded_disks                              = optional(set(string))
   }))
 }
